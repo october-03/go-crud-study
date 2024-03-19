@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"crud-study/crud-study/handlers"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("hello, world")
+	http.HandleFunc("/user/", handlers.UserHandler)
+
+	http.ListenAndServe(":12344", nil)
 }
